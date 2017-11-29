@@ -1,14 +1,12 @@
 import { combineReducers } from 'redux'
-import { OPEN_MODAL, SHUTDOWN_MODAL, CHANGE_STATE_A, CHANGE_STATE_B} from './actionType'
-
+import { OPEN_MODAL, SHUTDOWN_MODAL, CHANGE_STATE_A} from './actionType'
 
 let initialState = {
   modalStatus: "初始化"
 }
 
 let initialTestState = {
-  a:1,
-  b:2
+  text: "初始展示"
 }
 
 function modalStatus(state = initialState, action) {
@@ -28,19 +26,12 @@ function modalStatus(state = initialState, action) {
   }
 }
 
-
-
 function testState(state = initialTestState, action) {
   switch(action.type) {
     case CHANGE_STATE_A:
       return {
         ...state,
-        a:action.a
-      }
-    case CHANGE_STATE_B:
-      return {
-        ...state,
-        b:action.b
+        text: action.value
       }
     default:
       return state

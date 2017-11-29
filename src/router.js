@@ -1,5 +1,4 @@
 import React from 'react'
-// import ReactDOM from 'react-dom'
 import {
   BrowserRouter as Router,
   Route
@@ -8,12 +7,12 @@ import Home from './components/home'
 import About from './components/about'
 import Topics from './components/topics'
 import Page from './components/page'
-import Test from './components/test'
+import InsertRedux from './components/insertRedux'
 
 const routes = () => (
   <Router>
     <div>
-      <Test />
+      <InsertRedux />
       <hr/>
       <Page />
       <hr/>

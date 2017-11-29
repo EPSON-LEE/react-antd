@@ -1,11 +1,11 @@
 import { connect } from 'react-redux'
 import testRedux from './testRedux'
-import { openModal, shutModal, changeStateA, changeStateB} from '../redux/actions'
+import { openModal, shutModal, changeStateA} from '../redux/actions'
 
 const mapStateToProps = (state) => {
   return {
-    modalStatus: state.modalStatus,
-    test: state.testState
+    modalState: state.modalStatus,
+    testState: state.testState
   }
 }
 
@@ -19,9 +19,6 @@ const mapDispatchToProps = (dispatch) => {
     },
     changeStateA: (text) =>{
       dispatch(changeStateA(text))
-    },
-    changeStateB: (text) => {
-      dispatch(changeStateB(text))
     }
   }
 }
