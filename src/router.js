@@ -8,10 +8,13 @@ import Home from './components/home'
 import About from './components/about'
 import Topics from './components/topics'
 import Page from './components/page'
+import Test from './components/test'
 
 const routes = () => (
   <Router>
     <div>
+      <Test />
+      <hr/>
       <Page />
       <hr/>
       <Route exact path="/" component={Home}/>

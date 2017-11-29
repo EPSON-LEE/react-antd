@@ -2,14 +2,14 @@ import React from 'react'
 import { render } from 'react-dom'
 import { Provider } from 'react-redux'
 import { createStore } from 'redux'
-import todoApp from './example/reducers'
-import App from './example/components/App'
+import modal from './redux/reducers'
+import Routes from './router'
 
-let store = createStore(todoApp)
+let store = createStore(modal)
 
 render(
   <Provider store={store}>
-    <App />
+    <Routes />
   </Provider>,
   document.getElementById('root')
 )
