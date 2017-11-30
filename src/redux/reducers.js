@@ -2,7 +2,7 @@ import { combineReducers } from 'redux'
 import { OPEN_MODAL, SHUTDOWN_MODAL, CHANGE_STATE_A} from './actionType'
 
 let initialState = {
-  modalStatus: "初始化"
+  modalStatus: false
 }
 
 let initialTestState = {
