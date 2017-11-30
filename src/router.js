@@ -8,10 +8,12 @@ import About from './components/about'
 import Topics from './components/topics'
 import Page from './components/page'
 import InsertRedux from './components/insertRedux'
+import CalcultePrice from './components/components/calculatePrice'
 
 const routes = () => (
   <Router>
     <div>
+      <CalcultePrice />
       <InsertRedux />
       <hr/>
       <Page />
