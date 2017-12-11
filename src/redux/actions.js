@@ -1,6 +1,4 @@
-const OPEN_MODAL = 'OPEN_MODAL'
-const SHUTDOWN_MODAL = 'SHUTDOWN_MODAL'
-const CHANGE_STATE_A = 'CHANGE_STATE_A'
+import { OPEN_MODAL, SHUTDOWN_MODAL, CHANGE_STATE_A,CHANGE_STATE_B } from './actionType'
 
 export function openModal() {
   return {

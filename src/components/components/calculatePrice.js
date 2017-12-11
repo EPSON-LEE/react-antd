@@ -5,32 +5,37 @@ export default class CalcultePrice extends React.Component {
   constructor(props){
     super(props)
     this.state = {
-      price: 0,
+      price: '',
       amount:0,
       total: 0
     }
-    this.getPrice = this.getPrice.bind(this)
-    this.getAmount = this.getAmount.bind(this)
-    this.submit = this.submit.bind(this)
   }
 
-  getPrice(e) {
-    this.setState({price: e.target.value})
+  getPrice = (e) =>{
+    if(isNaN(e.target.value)) {
+      alert('请输入数字')
+    }else{
+      this.setState({'price': e.target.value.substr(0,5)})
+    }
   }
 
-  getAmount(e) {
-    this.setState({amount: e.target.value})
+  getAmount = (e) => {
+    if(isNaN(e.target.value)) {
+      alert('请输入正整数')
+    }else{
+      this.setState({'amount': e.target.value.substr(0,5)})
+    }
   }
 
-  submit() {
+  submit = (e) => {
     console.log(this.state.price * this.state.amount)
   }
 
   render() {
     return (
       <div>
-        <p>price: <input type="text" onChange={this.getPrice}/></p>
-        <p>amount: <input type="text" onChange={this.getAmount}/></p>
+        <p>price: <input type="text" value={this.state.price}  onChange={this.getPrice}/></p>
+        <p>amount:<input type="text" value={this.state.amount} onChange={this.getAmount}/></p>
         <p>total:{ this.state.price * this.state.amount }</p>
         <button onClick={this.submit}>提交</button>
       </div>

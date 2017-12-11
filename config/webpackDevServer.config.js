@@ -85,7 +85,13 @@ module.exports = function(proxy, allowedHost) {
       disableDotRule: true,
     },
     public: allowedHost,
-    proxy,
+    // 通过webpack配置proxy代理
+    proxy: {
+      '/gm/api/*': {
+          target: 'http://localhost:3000',
+          secure: false
+      }
+  },
     before(app) {
       // This lets us open files from the runtime error overlay.
       app.use(errorOverlayMiddleware());
