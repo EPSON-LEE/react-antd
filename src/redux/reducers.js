@@ -38,10 +38,10 @@ function testState(state = initialTestState, action) {
   }
 }
 
+// 合并状态树
 let modal = combineReducers({
   modalStatus,
   testState
 })
-
 
 export default modal

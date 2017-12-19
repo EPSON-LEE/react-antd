@@ -1,26 +1,23 @@
 import React from 'react'
 import {
   BrowserRouter as Router,
-  Route
+  Route,
+  Link
 } from 'react-router-dom'
 import Home from './components/home'
-import About from './components/about'
 import Topics from './components/topics'
-import Page from './components/page'
 import InsertRedux from './components/insertRedux'
-import CalcultePrice from './components/components/calculatePrice'
+import Page from './components/page'
+import App from './components/Test'
 
 const routes = () => (
   <Router>
     <div>
-      <CalcultePrice />
-      <InsertRedux />
-      <hr/>
       <Page />
-      <hr/>
       <Route exact path="/" component={Home}/>
-      <Route path="/about" component={About}/>
+      <Route path="/about" component={InsertRedux}/>
       <Route path="/topics" component={Topics}/>
+      <Route path="/test" component={App}></Route>
     </div>
   </Router>
 )

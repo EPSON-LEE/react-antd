@@ -2,6 +2,7 @@ import { connect } from 'react-redux'
 import testRedux from './testRedux'
 import { openModal, shutModal, changeStateA} from '../redux/actions'
 
+// 把状态（state）传到组件中
 const mapStateToProps = (state) => {
   return {
     modalState: state.modalStatus,
@@ -9,6 +10,7 @@ const mapStateToProps = (state) => {
   }
 }
 
+// 把行为(action)传到组件中
 const mapDispatchToProps = (dispatch) => {
   return {
     openModal: () =>{

@@ -5,11 +5,12 @@ import {
 
 const page = () => (
   <div>
-    <ul>
-      <li><Link to="/">Home</Link></li>
-      <li><Link to="/about">About</Link></li>
-      <li><Link to="/topics">Topics</Link></li>
-    </ul>
+    <h1>React V16 Demo</h1>
+    <ol>
+      <li><Link to="/">动态计算，输入验证</Link></li>
+      <li><Link to="/about">弹窗</Link></li>
+      <li><Link to="/topics">双层路由</Link></li>
+    </ol>
   </div>
 )
 
