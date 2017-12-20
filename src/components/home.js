@@ -1,6 +1,7 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
 import Button from 'antd/lib/button';
+import '.././module/home/index.css'
 
 export default class CalcultePrice extends React.Component {
   constructor(props){
@@ -34,12 +35,14 @@ export default class CalcultePrice extends React.Component {
 
   render() {
     return (
-      <div>
-        <p>price: <input placeholder="请输入价格" value={this.state.price}  onChange={this.getPrice} /></p>
-        <p>amount:<input placeholder="请输入数量" value={this.state.amount} onChange={this.getAmount}/></p>
-        <p>total:{ this.state.price * this.state.amount }</p>
-        <Button type="primary" onClick={this.submit}>提交</Button>
-      </div>
+     <div className="card">
+        <h1>实时计算价格</h1>
+        <div>
+          <p><span className="column">单价:</span><input placeholder="请输入价格" value={this.state.price}  onChange={this.getPrice} /></p>
+          <p><span className="column">数量:</span><input placeholder="请输入数量" value={this.state.amount} onChange={this.getAmount} /></p>
+          <p className="totalPrice">总价:{ this.state.price * this.state.amount }</p>
+        </div>
+     </div>
     )
   }
 }

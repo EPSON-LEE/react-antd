@@ -22,8 +22,7 @@ const testRedux = ({modalState, testState,openModal, shutModal,changeStateA}) =>
       >
       关闭
       </button>
-      { modalState.modalStatus ? <div style={{backgroundColor:'yellow', position: 'absolute',width:'100px', height: '100px', left:'50%', top:'50%', marginLeft: '-50px', marginTop:'-50px'}}>弹窗打开了<p>{testState.text }</p></div>
-      :<div /> }
+      { modalState.modalStatus ? <div style={{backgroundColor:'yellow', position: 'absolute',width:'100px', height: '100px', left:'50%', top:'50%', marginLeft: '-50px', marginTop:'-50px'}}>弹窗打开了<p>{testState.text }</p></div>:<div /> }
       <hr/>
       <form onSubmit={e => {
         e.preventDefault()
