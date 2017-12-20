@@ -58,6 +58,8 @@
     "mockdev": "npm run mock & npm run dev"
   },
   "devDependencies": {
+    "babel-plugin-import": "^1.6.3",
+    "react-router": "^2.4.1",
     "redux-devtools": "^3.4.1"
   },
   "jest": {
