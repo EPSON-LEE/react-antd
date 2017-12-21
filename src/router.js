@@ -11,6 +11,7 @@ import InsertRedux from './components/insertRedux'
 import Page from './components/page'
 import App from './components/Test'
 import MyEditor from './module/edit/index' 
+import Tree from './module/tree/index'
 
 const routes = () => (
   <Router>
@@ -18,7 +19,7 @@ const routes = () => (
       <Route exact path="/Home" component={Home}/>
       <Route path="/about" component={InsertRedux}/>
       <Route path="/MyEditor" component={MyEditor}/>
-      <Route path="/test" component={App}></Route>
+      <Route path="/Tree" component={Tree}></Route>
     </SiderDemo>
   </Router>
 )

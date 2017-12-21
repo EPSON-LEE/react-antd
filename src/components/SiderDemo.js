@@ -47,8 +47,10 @@ export default class SiderDemo extends React.Component {
           </Menu.Item>
 
           <Menu.Item key="4">
-            <Icon type="bar-chart" />
-            <span className="nav-text">nav 4</span>
+            <Link to="/Tree">
+              <Icon type="bar-chart" />
+              <span className="nav-text">nav 4</span>
+            </Link>
           </Menu.Item>
         </Menu>
       </Sider>
