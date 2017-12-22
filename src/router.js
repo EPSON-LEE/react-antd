@@ -12,6 +12,8 @@ import Page from './components/page'
 import App from './components/Test'
 import MyEditor from './module/edit/index' 
 import Tree from './module/tree/index'
+import MotionTable from './module/motion/index'
+import Animation from './components/move/move'
 
 const routes = () => (
   <Router>
@@ -20,6 +22,8 @@ const routes = () => (
       <Route path="/about" component={InsertRedux}/>
       <Route path="/MyEditor" component={MyEditor}/>
       <Route path="/Tree" component={Tree}></Route>
+      <Route path="/MotionTable" component={MotionTable}></Route>
+      <Route path="/Animation" component={Animation}></Route>
     </SiderDemo>
   </Router>
 )
