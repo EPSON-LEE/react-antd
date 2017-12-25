@@ -1,29 +1,14 @@
 @import '~antd/dist/antd.css';
 
-.card {
-  width: 300px;
-  height: 250px;
-  border: 2px solid black
+.input {
+  width: 250px;
 }
 
-h1 {
-  font-size: 20px;
-  color: black;
-  padding: 20px;
-  margin-left: -130px;
+.title {
+  font-size: 20px
 }
 
-p {
-  padding: 5px 5px 5px 0;
-  margin-left: -70px
-}
-
-.column {
-  padding-right: 5px; 
-}
-
-.totalPrice {
-  display: inline-block;
-  float: left;
-  margin-left: 5px;
+.logo {
+  width: 50px;
+  height: 50px;
 }

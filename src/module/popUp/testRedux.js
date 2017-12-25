@@ -1,29 +1,30 @@
 import React from 'react'
 import PropTypes from 'prop-types';
+import { Button } from 'antd'
+import './index.css'
 
 const testRedux = ({modalState, testState,openModal, shutModal,changeStateA}) => {
   let input
   return (
     <div>
-      <span>弹窗控制</span>
-      <button href="#"
+      <span className="pop-up-control">弹窗控制</span>
+      <Button type="dashed"
           onClick={e => {
             e.preventDefault()
             openModal()
           }}
       >
       打开
-      </button>
-      <button href="#"
+      </Button>
+      <Button type="dashed"
         onClick={e => {
           e.preventDefault()
           shutModal()
         }}
       >
       关闭
-      </button>
+      </Button>
       { modalState.modalStatus ? <div style={{backgroundColor:'yellow', position: 'absolute',width:'100px', height: '100px', left:'50%', top:'50%', marginLeft: '-50px', marginTop:'-50px'}}>弹窗打开了<p>{testState.text }</p></div>:<div /> }
-      <hr/>
       <form onSubmit={e => {
         e.preventDefault()
         if (!input.value.trim()) {
@@ -35,9 +36,9 @@ const testRedux = ({modalState, testState,openModal, shutModal,changeStateA}) =>
         <input ref={node => {
           input = node
         }} />
-        <button type="submit">
+        <Button type="dashed">
           Add Todo
-        </button>
+        </Button>
       </form>
       <p>展示输入的内容: { testState.text }</p>
     </div>
@@ -51,5 +52,6 @@ testRedux.propTypes = {
   shutModal: PropTypes.func.isRequired,
   changeStateA: PropTypes.func.isRequired
 }
+
 
 export default testRedux
