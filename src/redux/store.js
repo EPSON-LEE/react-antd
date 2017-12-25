@@ -1,8 +1,8 @@
 import { createStore } from 'redux'
-import modal from './reducers'
+import state from './reducers'
 
 let store = createStore(
-  modal,
+  state,
   window.__REDUX_DEVTOOLS_EXTENSION__ && window.__REDUX_DEVTOOLS_EXTENSION__()
 )
 

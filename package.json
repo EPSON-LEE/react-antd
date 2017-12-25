@@ -5,6 +5,7 @@
   "dependencies": {
     "antd": "^3.0.2",
     "autoprefixer": "7.1.6",
+    "axios": "^0.17.1",
     "babel-core": "6.26.0",
     "babel-eslint": "7.2.3",
     "babel-jest": "20.0.3",
@@ -58,8 +59,8 @@
     "build": "node scripts/build.js",
     "test": "node scripts/test.js --env=jsdom",
     "dev": "webpack-dev-server --inline --hot --no-info",
-    "mock": "node_modules/.bin/json-server --watch mock/db.json --port 3000",
-    "mockdev": "npm run mock & npm run dev"
+    "mock": "node_modules/.bin/json-server --watch mock/db.json --port 3001",
+    "mockdev": "npm run mock"
   },
   "devDependencies": {
     "babel-plugin-import": "^1.6.3",

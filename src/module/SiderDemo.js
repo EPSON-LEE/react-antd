@@ -68,6 +68,13 @@ export default class SiderDemo extends React.Component {
               </Link>
             </Menu.Item>
 
+            <Menu.Item key="7">
+              <Link to='/List'>
+                <Icon type="user" />
+                <span>List</span>
+              </Link>
+            </Menu.Item>
+
           </Menu>
         </Sider>
         

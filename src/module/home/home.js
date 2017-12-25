@@ -1,6 +1,7 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
 import { Input } from 'antd';
+import Rater from '../../components/rate'
 import './index.css'
 
 export default class CalcultePrice extends React.Component {
@@ -43,10 +44,11 @@ export default class CalcultePrice extends React.Component {
      <div className="card">
         <h1 className="title">{this.props.title}</h1>
         <div>
-          <p><span>单价:</span><Input className="input" placeholder="请输入价格" value={this.state.price}  onChange={this.getPrice} /></p>
-          <p><span>数量:</span><Input className="input" placeholder="请输入数量" value={this.state.amount} onChange={this.getAmount} /></p>
+          <p><span>单价: </span><Input className="input" placeholder="请输入价格" value={this.state.price}  onChange={this.getPrice} /></p>
+          <p><span>数量: </span><Input className="input" placeholder="请输入数量" value={this.state.amount} onChange={this.getAmount} /></p>
           <p>总价:{ this.state.price * this.state.amount }</p>
         </div>
+        <Rater/>
      </div>
     )
   }

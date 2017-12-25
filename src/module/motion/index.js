@@ -1,7 +1,6 @@
 
 import React from 'react'
 import QueueAnim from 'rc-queue-anim';
-import Rater from '../../components/rate'
 import './index.css'
 
 export default class Motion extends React.Component {
@@ -21,9 +20,6 @@ export default class Motion extends React.Component {
           <div key="j">依次进场</div>
           <div key="k">依次进场</div>
         </QueueAnim>
-        <div className="rater">
-        <Rater />
-        </div>
       </div>
     )
   }

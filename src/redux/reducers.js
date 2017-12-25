@@ -1,5 +1,6 @@
 import { combineReducers } from 'redux'
-import { OPEN_MODAL, SHUTDOWN_MODAL, CHANGE_STATE_A} from './actionType'
+import { OPEN_MODAL, SHUTDOWN_MODAL, CHANGE_STATE_A,
+         GET_LIST} from './actionType'
 
 let initialState = {
   modalStatus: false
@@ -7,6 +8,22 @@ let initialState = {
 
 let initialTestState = {
   text: "初始展示"
+}
+
+let initialList = {
+  List: '空的'
+}
+
+function getList (state = initialList,action) {
+  switch(action.type) {
+    case GET_LIST:
+      return {
+        ...state,
+        success: action
+      }
+    default:
+      return state
+  }
 }
 
 function modalStatus(state = initialState, action) {
@@ -39,9 +56,10 @@ function testState(state = initialTestState, action) {
 }
 
 // 合并状态树
-let modal = combineReducers({
+let state = combineReducers({
   modalStatus,
-  testState
+  testState,
+  getList
 })
 
-export default modal
+export default state

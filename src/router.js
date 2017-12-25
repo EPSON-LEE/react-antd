@@ -5,7 +5,7 @@ import {
   Link
 } from 'react-router-dom'
 
-import SiderDemo from './components/SiderDemo'
+import SiderDemo from './module/SiderDemo'
 
 import Home from './module/home/home'
 import InsertRedux from './module/popUp/insertRedux'
@@ -13,6 +13,7 @@ import MyEditor from './module/edit/index'
 import Tree from './module/tree/index'
 import MotionTable from './module/motion/index'
 import Animation from './module/animation/index'
+import List from './module/list/index'
 
 const routes = () => (
   <Router>
@@ -23,6 +24,7 @@ const routes = () => (
       <Route path="/Tree" component={Tree}></Route>
       <Route path="/MotionTable" component={MotionTable}></Route>
       <Route path="/Animation" component={Animation}></Route>
+      <Route path="/List" component={List} />
     </SiderDemo>
   </Router>
 )

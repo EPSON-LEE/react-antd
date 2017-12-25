@@ -1,19 +1,34 @@
 {
-  "posts": [
+  "articles": [
     {
-      "id": 1,
-      "title": "json-server",
-      "author": "typicode"
-    }
-  ],
-  "comments": [
+      "key": "1",
+      "name": "John Brown",
+      "age": "32",
+      "address": "New York No. 1 Lake Park"
+    },
     {
-      "id": 1,
-      "body": "some comment",
-      "postId": 1
+      "key": "2",
+      "name": "Lee",
+      "age": "12",
+      "address": "New York No. 2 Lake Park"
+    },
+    {
+      "key": "3",
+      "name": "James Brown",
+      "age": "52",
+      "address": "New York No. 3 Lake Park"
+    },
+    {
+      "key": "4",
+      "name": "Kent Brown",
+      "age": "23",
+      "address": "New York No. 4 Lake Park"
+    },
+    {
+      "key": "5",
+      "name": "John Brown",
+      "age": "32",
+      "address": "New York No. 1 Lake Park"
     }
-  ],
-  "profile": {
-    "name": "typicode"
-  }
+  ]
 }
