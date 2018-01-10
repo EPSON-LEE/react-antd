@@ -1,0 +1,62 @@
+
+.wrapper {
+  margin: 10px;
+  display: inline-block;
+}
+.box{
+  width: 100px;
+  height: 100px;
+  background-color: red;
+}
+
+.name-box {
+  cursor: pointer;
+  display: inline-block;
+  width: 200px;
+  height: 50px;
+  line-height: 50px;
+  text-align: center;
+  background: rgb(241,241,241);
+}
+
+.name-input {
+  width: 200px;
+}
+.name-repo {
+  width: 200px;
+  height: 100px;
+  border-left: 1px solid #d9d9d9;
+  border-right: 1px solid #d9d9d9;
+  padding: 0;
+  padding-top: 10px;
+  overflow: auto;
+}
+
+.item {
+  cursor: pointer;
+  list-style: none;
+  text-align: center;
+  background: white;
+  font: 10px solid grey;;
+  border: 1px solid #d9d9d9;
+}
+
+.item:hover {
+  background-color: #f7fdff;
+}
+
+/* editableBox */
+.text {
+  cursor: pointer;
+  display: inline-block;
+  width: 100px;
+  height: 30px;
+  line-height: 30px;
+  text-align: center;
+  vertical-align: middle;
+  background-color: rgb(241,241,241);
+}
+
+.text-input {
+  width: 120px;
+}
