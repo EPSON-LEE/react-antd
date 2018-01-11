@@ -26,6 +26,6 @@ export default class Slider extends React.Component{
           ] : null}
         </QueueAnim>
       </div>
-    );
+    )
   }
-};
+}

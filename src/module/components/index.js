@@ -1,8 +1,9 @@
 import React from 'react'
 import PropTypes from 'prop-types';
-import { Button, Input } from 'antd'
+import { Button, Input, Collapse } from 'antd'
 import Slider from './components/slider'
 import './index.css'
+const Panel = Collapse.Panel
 
 export default class Test extends React.Component{
   state = {
@@ -12,16 +13,14 @@ export default class Test extends React.Component{
     // 可编辑下拉框
     storeName: '未设定',
     showOrsearch: true,
-    dataSource: [1,2,3,4,5,6,7,8,9,10,11,12,13],
+    dataSource: ['000001','000002','000003','000004','000005','000006','000007','000008','000009','000010','000011','000012','000013'],
+    // 下拉列表
   };
   // 可编辑输入框
   componentDidUpdate() {
     if(this.textInput) {
       this.textInput.focus();
     }
-    // if(this.selectInput) {
-    //   this.selectInput.focus();
-    // }
   }
   changeTextEditable = () => {
     this.setState({
@@ -109,6 +108,18 @@ export default class Test extends React.Component{
           {this.state.dataSource.map(x => (<li className='item' onClick={() => this.select(x)} key={x}>{x}</li>))}
         </ul>: []}
       </div>
+      { /* 手风琴 关联特性列表 */ }
+      <Collapse style={{width: 450}} defaultActiveKey={['1']}>
+        <Panel header={this.state.showOrEdit + '空格  '  +' 归属项目'} key="1">
+          <div>
+            <header>#8320642</header>
+            <content>切图</content>
+            <footer>
+              <span>2018-01-09</span><span>2018-02-09</span><span>林水财</span><span>预估工时：16</span><span>抄送人</span><span>已下单</span><span>未开始</span>
+            </footer>
+          </div>
+        </Panel>
+      </Collapse>
     </div>
     );
   }
