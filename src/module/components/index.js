@@ -69,7 +69,17 @@ export default class Test extends React.Component{
     console.log(x)
     this.setState({storeName: x, showOrsearch:true})
   }
+  handleRouterEvent = () => {
+    this.props.history.push({
+      pathname: '/home',
+      state: {
+        a: 1,
+        b: 2
+      }
+    })
+  }
   render() {
+    console.log(this.props)
     return (
     <div>
       {/* 滑框 */}
@@ -120,6 +130,8 @@ export default class Test extends React.Component{
           </div>
         </Panel>
       </Collapse>
+      {/* 跳转 */}
+      <Button onClick={this.handleRouterEvent}>跳转路由</Button>
     </div>
     );
   }

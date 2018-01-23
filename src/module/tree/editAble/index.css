@@ -1,0 +1,94 @@
+.treeNode {
+  font-size: 16px;
+  font-weight: bold;
+  color: black;
+  display: inline-block;
+  padding: 0px 20px 0 0px;
+}
+
+.treeNode:hover {
+  background-color: #c4e0eb;
+  height: 30px;
+}
+
+.ant-tree li .ant-tree-node-content-wrapper.ant-tree-node-selected {
+  background: #c4e0eb !important;
+  height: 30px;
+}
+
+.add,
+.edit,
+.del,
+.copy {
+  width: 15px;
+  height: 15px;
+  /* display: inline-block; */
+  float: right;
+  display: none;
+  margin-top: 3px;
+  margin-left: 5px;
+  margin-bottom: 2px;
+  background-image: url('./icon.png')
+}
+
+.treeNode:hover .add {
+  margin-top: 5px;
+  background-position: -214px 0;
+  vertical-align: top;
+  background-image: url('./icon.png');
+  display: inline-block !important;
+}
+
+.treeNode:hover .edit {
+  margin-top: 4px;
+  background-position: -180px -48px;
+  vertical-align: top;
+  display: inline-block !important;
+}
+
+.treeNode:hover .del {
+  margin-top: 4px;
+  display: inline-block !important;
+  background-position: -180px -64px;
+  vertical-align: top;
+}
+
+.treeNode:hover .copy {
+  display: inline-block !important;
+  margin-top: 4px;
+  background-position: -180px -96px;
+  vertical-align: top;
+}
+
+/*
+* 选中时，该选中样式下的图表显示
+*/
+/* 增加 */
+.ant-tree li .ant-tree-node-content-wrapper.ant-tree-node-selected .add {
+  margin-top: 5px;
+  background-position: -214px 0;
+  vertical-align: top;
+  background-image: url('./icon.png');
+  display: inline-block !important;
+}
+/* 编辑 */
+.ant-tree li .ant-tree-node-content-wrapper.ant-tree-node-selected .edit {
+  margin-top: 4px;
+  background-position: -180px -48px;
+  vertical-align: top;
+  display: inline-block !important;
+}
+/* 删除 */
+.ant-tree li .ant-tree-node-content-wrapper.ant-tree-node-selected .del {
+  margin-top: 4px;
+  display: inline-block !important;
+  background-position: -180px -64px;
+  vertical-align: top;
+}
+/* 复制 */
+.ant-tree li .ant-tree-node-content-wrapper.ant-tree-node-selected .copy {
+  margin-top: 4px;
+  background-position: -180px -96px;
+  vertical-align: top;
+  display: inline-block !important;
+}

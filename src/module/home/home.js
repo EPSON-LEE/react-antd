@@ -31,7 +31,7 @@ export default class CalcultePrice extends React.Component {
       alert('请输入正整数')
     }else{
       // 限制输入长度
-      this.setState({'amount': e.target.value.substr(0,5)})
+      this.setState({'amount': e.target.value})
     }
   }
 
@@ -39,13 +39,17 @@ export default class CalcultePrice extends React.Component {
     console.log(this.state.price * this.state.amount)
   }
 
+  componentDidMount() {
+  }
+
   render() {
+    console.error(this.state)
     return (
      <div className="card">
         <h1 className="title">{this.props.title}</h1>
         <div>
           <p><span>单价: </span><Input className="input" placeholder="请输入价格" value={this.state.price}  onChange={this.getPrice} /></p>
-          <p><span>数量: </span><Input className="input" placeholder="请输入数量" value={this.state.amount} onChange={this.getAmount} /></p>
+          <p><span>数量: </span><Input disabled className="input" placeholder="请输入数量" onChange={this.getAmount} /></p>
           <p>总价:{ this.state.price * this.state.amount }</p>
         </div>
         <Rater/>
