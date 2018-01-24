@@ -6,10 +6,10 @@
   padding: 0px 20px 0 0px;
 }
 
-.treeNode:hover {
+/* .treeNode:hover {
   background-color: #c4e0eb;
   height: 30px;
-}
+} */
 
 .ant-tree li .ant-tree-node-content-wrapper.ant-tree-node-selected {
   background: #c4e0eb !important;
@@ -30,7 +30,7 @@
   margin-bottom: 2px;
   background-image: url('./icon.png')
 }
-
+/* 
 .treeNode:hover .add {
   margin-top: 5px;
   background-position: -214px 0;
@@ -58,7 +58,7 @@
   margin-top: 4px;
   background-position: -180px -96px;
   vertical-align: top;
-}
+} */
 
 /*
 * 选中时，该选中样式下的图表显示

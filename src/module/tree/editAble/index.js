@@ -39,6 +39,48 @@ export default class EditAble extends React.Component {
   }
 
   /**
+   * 点击增加按钮
+   */
+  handleAdd = (e) => {
+    // 遍历结点， 找到id为this.props.selectedKeys的节点，push一个孩子节点， selectedKeys设置孩子节点ID，state.editStatus设置为true
+    
+    var data = this.props.gData
+    var selectedKeys = this.props.selectedKeys
+    this.findNode(data, selectedKeys)
+    this.props.setStateInChild(this.props.gData)
+  }
+
+  /**
+   * 递归找节点
+   */
+  findNode = (data, selectedKeys) => {
+    for (let i = 0; i<data.length; i++) {
+      if (data[i].key + '' === selectedKeys[0]) {
+        if (data[i].children) {
+          // 发送请求
+          data[i].children.push({
+            id: 'newItem' + Date.parse(new Date),
+            key: 'newItem' + Date.parse(new Date),
+            editable: true
+          })
+        } else {
+          // 发送请求
+          data[i].children = []
+          data[i].children.push({
+            id: 'newItem' + Date.parse(new Date),
+            key: 'newItem' + Date.parse(new Date),
+            editable: true
+          })
+        }
+        break
+      }
+      if (data[i].children) {
+        this.findNode(data[i].children, selectedKeys)
+      }
+    }
+  }
+
+  /**
    * 点击回车， 确认输入
    */
   handleKeyDown = (e) => {
@@ -63,8 +105,8 @@ export default class EditAble extends React.Component {
         {this.props.value}
         <i className='del'/>
         <i className='copy'/>
-        <i onClick={this.handleEdit} className='edit'/>
-        <i className='add' />
+        <i className='edit'  onClick={this.handleEdit}/>
+        <i className='add'  onClick={this.handleAdd} />
       </span>      
     )
   }

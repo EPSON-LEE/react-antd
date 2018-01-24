@@ -16,6 +16,7 @@ import Animation from './module/animation/index'
 import List from './module/list/index'
 import Cascador from './module/cascador/index'
 import LazyCascador from './module/lazyCascader/index'
+import dynamicTree from './module/dynamicTree/index'
 
 const routes = () => (
   <Router>
@@ -29,6 +30,7 @@ const routes = () => (
       <Route path="/List" component={List} />
       <Route path="/Cascador" component={Cascador}></Route>
       <Route path="/LazyCascador" component={LazyCascador}></Route>
+      <Route path="/dynamicTree" component={dynamicTree}></Route>
     </SiderDemo>
   </Router>
 )
