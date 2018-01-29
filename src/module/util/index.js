@@ -36,5 +36,5 @@ judgeType = (param) => {
             return 'Undefined'
     }
 }
-// test
+// test example
 judgeType(5)
