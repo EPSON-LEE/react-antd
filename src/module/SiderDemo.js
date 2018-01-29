@@ -55,9 +55,9 @@ export default class SiderDemo extends React.Component {
             </Menu.Item>
 
             <Menu.Item key="5">
-              <Link to='/MotionTable'>
+              <Link to='/Components'>
                 <Icon type="user" />
-                <span>MotionTable</span>
+                <span>各种组件</span>
               </Link>
             </Menu.Item>
 
@@ -75,6 +75,19 @@ export default class SiderDemo extends React.Component {
               </Link>
             </Menu.Item>
 
+            <Menu.Item key="8">
+              <Link to='/Cascador'>
+                <Icon type="user" />
+                <span>Cascador</span>
+              </Link>
+            </Menu.Item>
+
+            <Menu.Item key="9">
+              <Link to='/LazyCascador'>
+                <Icon type="user" />
+                <span>LazyCascador</span>
+              </Link>
+            </Menu.Item>
           </Menu>
         </Sider>
         

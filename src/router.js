@@ -11,9 +11,12 @@ import Home from './module/home/home'
 import InsertRedux from './module/popUp/insertRedux'
 import MyEditor from './module/edit/index' 
 import Tree from './module/tree/index'
-import MotionTable from './module/motion/index'
+import Components from './module/components/index'
 import Animation from './module/animation/index'
 import List from './module/list/index'
+import Cascador from './module/cascador/index'
+import LazyCascador from './module/lazyCascader/index'
+import dynamicTree from './module/dynamicTree/index'
 
 const routes = () => (
   <Router>
@@ -22,9 +25,12 @@ const routes = () => (
       <Route path="/about" component={InsertRedux}/>
       <Route path="/MyEditor" component={MyEditor}/>
       <Route path="/Tree" component={Tree}></Route>
-      <Route path="/MotionTable" component={MotionTable}></Route>
+      <Route path="/Components" component={Components}></Route>
       <Route path="/Animation" component={Animation}></Route>
       <Route path="/List" component={List} />
+      <Route path="/Cascador" component={Cascador}></Route>
+      <Route path="/LazyCascador" component={LazyCascador}></Route>
+      <Route path="/dynamicTree" component={dynamicTree}></Route>
     </SiderDemo>
   </Router>
 )
