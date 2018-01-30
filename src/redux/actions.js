@@ -60,7 +60,6 @@ function error() {
 export function getList() {
   return (function (dispatch) {
     dispatch(requestPosts())
-    const data = axios.get(`http://localhost:3001/articles`)
     return axios.get(`http://localhost:3001/articles`).then(
       Response =>Response
       // err => dispatch(error())
