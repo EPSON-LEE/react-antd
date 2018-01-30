@@ -1,53 +1,19 @@
 import React from 'react';
 import { Tree } from 'antd';
 import EditBox from './editAble/index'
+import AddNode from './editAble/index'
 import './index.css'
 import Select from 'antd/lib/select';
 import Input from 'antd/lib/input/Input';
-const TreeNode = Tree.TreeNode;
+const TreeNode = Tree.TreeNode
 
-
-/**
- * 生成树状的空间的结构
- */
-
- // 每一层树叶子节点的深度
-// const x = 10;
-// //
-// const y = 3;
-// const z = 1;
-// const gData = [];
-
-// const generateData = (_level, _preKey, _tns) => {
-//   const preKey = _preKey || '0';
-//   const tns = _tns || gData;
-
-//   const children = [];
-//   for (let i = 0; i < x; i++) {
-//     const key = `${preKey}-${i}`;
-//     tns.push({ title: key, key });
-//     if (i < y) {
-//       children.push(key);
-//     }
-//   }
-//   // Z层之内
-//   if (_level < 0) {
-//     return tns;
-//   }
-//   const level = _level - 1;
-//   children.forEach((key, index) => {
-//     tns[index].children = [];
-//     return generateData(level, key, tns[index].children);
-//   });
-// };
-// generateData(z);
 
 const gData = [
   {
     id: 1,
     key: 1,
     title: '1-1级节点',
-    editable: false,
+    level: 1,
     children: [{
       id: 11,
       key: 11,
@@ -59,7 +25,7 @@ const gData = [
     id: 1,
     key: 2,
     title: '1-2级节点',
-    editable: false,
+    level: 1,
     children: [{
       id: 12,
       key: 12,
@@ -71,7 +37,7 @@ const gData = [
     id: 1,
     key: 3,
     title: '1-3级节点',
-    editable: false,
+    level: 1,
     children: [{
       id: 13,
       key: 13,
@@ -82,7 +48,7 @@ const gData = [
     id: 1,
     key: 4,
     title: '1-4级节点',
-    editable: false,
+    level: 1,
     children: [{
       id: 14,
       key: 14,
@@ -101,10 +67,17 @@ const gData = [
 export default class antdTree extends React.Component {
   state = {
     gData,
-    selectedKeys: ['newItem']
+    // 选中的节点
+    selectedKeys: ['newItem'],
+    // 展开的节点
+    expandedKeys: ['1']
   }
   
+  /**
+   * 选中某一节点触发
+   */
   handleSelect = (selectedKeys, e) => {
+    // 根据传过来的属性来判断是否发送请求
     if(selectedKeys.length === 0) {
       return
     }
@@ -113,9 +86,13 @@ export default class antdTree extends React.Component {
     })
   }
 
-  handleChange = (e) => {
-    alert(e)
-    console.log(e)
+  /**
+   * 在子组件中展开指定节点
+   */
+  setExpandedKeysInChild = (target) => {
+    this.setState({
+      expandedKeys: target
+    })
   }
 
   /**
@@ -136,55 +113,54 @@ export default class antdTree extends React.Component {
     })
   }
 
-  handleKeyBoard = (e) => {
-    // alert(e.target.value)
-    // if (e.keyCode === 13) {
-    //   console.error(e.target.value)
-    // }
-  }
-
   render() {
     const loop = data => data.map((item) => {
       if (item.children && item.children.length) {
         return <TreeNode
                 key={item.key}
-                title={ !item.editable
-                        ? <EditBox
+                title={<EditBox
+                        // 树形结构数据
                           gData={this.state.gData}
+                        // 设置选中的元素  传入到子组件中
                           setSelectedKeysInChild={this.setSelectedKeysInChild}
+                        // 设置展开元素 传入到子组件中
+                          setExpandedKeysInChild={this.setExpandedKeysInChild}
+                        // 在子组件中修改state， 用于修改树形结构
                           setStateInChild={this.setStateInChild}
+                        // 选中的元素
                           selectedKeys={this.state.selectedKeys}
+                        // 需要展示的内容
                           value={item.key} />
-                        : <Input
-                            ref={(input) => { this.input = input }}
-                            onKeyUp={ this.handleKeyBoard }
-                         /> 
                       }>
                   {loop(item.children)}
                 </TreeNode>;
       }
       return <TreeNode
               key={item.key}
-              title={ !item.editable
-                ? <EditBox
-                  gData={this.state.gData}
-                  setSelectedKeysInChild={this.setSelectedKeysInChild}
-                  setStateInChild={this.setStateInChild}
-                  selectedKeys={this.state.selectedKeys}
-                  value={item.key} />
-                : <Input
-                  ref={(input) => { this.input = input }}
-                  onKeyUp={ this.handleKeyBoard } /> 
-                    } />;
+              title={<EditBox
+              // 树形结构数据
+                gData={this.state.gData}
+              // 设置选中的元素  传入到子组件中
+                setSelectedKeysInChild={this.setSelectedKeysInChild}
+              // 设置展开元素 传入到子组件中
+                setExpandedKeysInChild={this.setExpandedKeysInChild}
+              // 在子组件中修改state， 用于修改树形结构
+                setStateInChild={this.setStateInChild}
+              // 选中的元素
+                selectedKeys={this.state.selectedKeys}
+              // 需要展示的内容
+                value={item.key} />
+            } />
     });
     return (
       <Tree
         showLine
-        className='color'
         className="draggable-tree"
+        defaultExpandAll={true}
+        autoExpandParent={true}
         selectedKeys={this.state.selectedKeys}
-        onChange={this.handleChange}
         onSelect={this.handleSelect}
+        // expandedKeys={this.state.expandedKeys}
         onDrop={this.onDrop}
       >
         {loop(this.state.gData)}
