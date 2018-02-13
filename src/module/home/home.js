@@ -1,18 +1,11 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
 import { Input } from 'antd';
-import Rater from '../../components/rate'
-import pinyin from 'pinyin'
 import './index.css'
 
 export default class CalcultePrice extends React.Component {
 
   constructor(props){
-    console.log(pinyin('中心').toString())
-    console.log(pinyin("中心", {
-      style: pinyin.STYLE_INITIALS, // 设置拼音风格
-      heteronym: true
-    }).toString());
 
     super(props)
     this.state = {
@@ -23,19 +16,6 @@ export default class CalcultePrice extends React.Component {
   }
 
   transform = (e) => {
-    console.log(e.target.value)
-    console.log(pinyin(e.target.value, {
-      style: pinyin.STYLE_INITIALS, // 设置拼音风格
-      heteronym: true
-    }).toString().split(','));
-
-    console.log(pinyin(e.target.value).toString())
-    console.log(pinyin('中心').toString())
-    console.log(pinyin("中心", {
-      style: pinyin.STYLE_INITIALS, // 设置拼音风格
-      heteronym: true
-    }).toString());
-
   }
 
   getPrice = (e) =>{
@@ -72,7 +52,6 @@ export default class CalcultePrice extends React.Component {
           <p><span>测试：</span><Input className="input" placeholder="请输入文字" onChange={this.transform} /></p>
           <p>总价:{ this.state.price * this.state.amount }</p>
         </div>
-        <Rater/>
      </div>
     )
   }

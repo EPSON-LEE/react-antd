@@ -10,13 +10,14 @@
     .container {
       display: flex; /* or a inline-flex */
       flex-direction:  row; /* row-reverse column column-reverse */
-      flex-wrap: nowrap; /* 正序 换行 第一行和第二行换行 'wrap wrap-reverse'  */ 
+      flex-wrap: wrap-reverse; /* 正序 换行 第一行和第二行换行 'wrap wrap-reverse'  */ 
       justify-content: space-between; /* flex-start flex-end center space-between space-around space-evenly*/
       align-items: center;
 
       background-color: #adc0f555;
-      width: 100%;
-      height: 100px;
+      width: 1000px;
+      height: 100%;
+      margin: 10px;
     }
     .container .item0 {
       order: 0;
@@ -24,34 +25,47 @@
       background-color: tomato;
       width: 50px;
       height: 50px;
+      margin: 10px;
+      text-align: center;
+      line-height: 50px;
     }
-    .container .item1 {
+    .container .item {
       order: 1;
       /* flex-grow: 2; */
       background-color: tomato;
       width: 50px;
       height: 50px;
-    }
-    .container .item2 {
-      order: 2;
-      /* flex-grow: 2; */
-      background-color: tomato;
-      width: 50px;
-      height: 50px;
+      margin: 5px 50px;
+      text-align: center;
+      line-height: 50px;
     }
   </style>
 </head>
 <body>
   <div class="container">
-    <div class="item0">0</div>
-    <div class="item1">1</div>
-    <div class="item2">2</div>
-    <div class="item0">3</div>
-    <div class="item1">4</div>
-    <div class="item2">5</div>
-    <div class="item0">6</div>
-    <div class="item1">7</div>
-    <div class="item2">8</div>
+    <div class="item">0</div>
+    <div class="item">1</div>
+    <div class="item">2</div>
+    <div class="item">3</div>
+    <div class="item">4</div>
+    <div class="item">5</div>
+    <div class="item">6</div>
+    <div class="item">7</div>
+    <div class="item">8</div>
+    <div class="item">9</div>
+    <div class="item">10</div>
+    <div class="item">11</div>
+    <div class="item">12</div>
   </div>
+  <script>
+    console.group('开始')
+    console.log(1111111)
+    console.log(1111112)
+    console.group()
+    console.log(3)
+    console.log(3)
+    console.group()
+    console.groupEnd('完')
+  </script>
 </body>
 </html>

@@ -1,6 +1,10 @@
 import { combineReducers } from 'redux'
-import { OPEN_MODAL, SHUTDOWN_MODAL, CHANGE_STATE_A,
-         GET_LIST} from './actionType'
+import { OPEN_MODAL,
+         SHUTDOWN_MODAL,
+         CHANGE_STATE_A,
+         GET_LIST,
+         REQUEST_MESSAGE
+      } from './actionType'
 
 let initialState = {
   modalStatus: false
@@ -14,7 +18,7 @@ let initialList = {
   List: '空的'
 }
 
-function getList (state = initialList,action) {
+let getList = (state = initialList,action) => {
   switch(action.type) {
     case GET_LIST:
       return {
@@ -26,7 +30,7 @@ function getList (state = initialList,action) {
   }
 }
 
-function modalStatus(state = initialState, action) {
+let modalStatus = (state = initialState, action) => {
   switch(action.type) {
     case OPEN_MODAL:
       return {
@@ -43,7 +47,7 @@ function modalStatus(state = initialState, action) {
   }
 }
 
-function testState(state = initialTestState, action) {
+let testState = (state = initialTestState, action) => {
   switch(action.type) {
     case CHANGE_STATE_A:
       return {
@@ -55,6 +59,20 @@ function testState(state = initialTestState, action) {
   }
 }
 
+// 网络信息
+let asyncAction = (action) => {
+  switch(action.type) {
+    case REQUEST_MESSAGE:
+      return {
+        ...state,
+        message: action.payload
+      }
+    default:
+      return state
+  }
+}
+
+// store
 // 合并状态树
 let state = combineReducers({
   modalStatus,

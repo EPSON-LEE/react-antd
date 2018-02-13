@@ -1,23 +1,38 @@
+import store from './store'
 import axios from 'axios'
-import { OPEN_MODAL, SHUTDOWN_MODAL, CHANGE_STATE_A,CHANGE_STATE_B,INVALIDATE_ADDRESS,ERROR,        RECEIVE_POSTS,REQUEST_POSTS,GET_LIST,  ADD_LIST, MODIFY_LIST, DELETE_LIST, SEARCH_LIST 
+import {
+  OPEN_MODAL,
+  SHUTDOWN_MODAL,
+  CHANGE_STATE_A,
+  CHANGE_STATE_B,
+  INVALIDATE_ADDRESS,ERROR,
+  RECEIVE_POSTS,
+  REQUEST_POSTS,GET_LIST,
+  ADD_LIST,
+  MODIFY_LIST,
+  DELETE_LIST,
+  SEARCH_LIST,
+  REQUEST_MESSAGE 
 } from './actionType'
 
+// const store=crea
+
 // popUp
-export function openModal() {
+export let openModal = () => {
   return {
     type: OPEN_MODAL,
     modalStatus: true
   }
 }
 
-export function shutModal() {
+export let shutModal = () => {
   return {
     type: SHUTDOWN_MODAL,
     modalStatus: false
   }
 }
 
-export function changeStateA(text) {
+export let changeStateA = (text) => {
   return {
     type: CHANGE_STATE_A,
     value: text
@@ -25,7 +40,7 @@ export function changeStateA(text) {
 }
 
 // 等待
-function requestPosts() {
+export let requestPosts = () => {
   return {
     type: REQUEST_POSTS,
     success: false
@@ -33,7 +48,7 @@ function requestPosts() {
 }
 
 // 无效页面
-export function invalidAdress() {
+export let invalidAdress = () => {
   return {
     type:INVALIDATE_ADDRESS,
     success: false
@@ -41,7 +56,7 @@ export function invalidAdress() {
 }
 
 // 成功
-function receiveData() {
+export let receiveData = () => {
   return {
     type: RECEIVE_POSTS,
     success: true
@@ -49,30 +64,21 @@ function receiveData() {
 }
 
 // 失败
-function error() {
+export let error = () => {
   return {
     type: ERROR,
     success: false
   }
 }
 
-// redux-thunk
+// 发送请求
 export function getList() {
-  return (function (dispatch) {
-    dispatch(requestPosts())
-    return axios.get(`http://localhost:3001/articles`).then(
-      Response =>Response
-      // err => dispatch(error())
-    ).then(Response =>dispatch(receiveData()))
-  }())
+  return {
+    type: REQUEST_MESSAGE,
+    payload: {
+      data: axios.get(`http://localhost:3001/articles`)
+    }
+  }
 }
 
-// export function getList() {
-//   return function(dispatch) {
-//     return axios.get(`http://localhost:3001/articles`)
-//     .then(json => {
-//       console.log(json)
-//       dispatch(shouldGet())
-//     })
-//   }
-// }
+// 成功

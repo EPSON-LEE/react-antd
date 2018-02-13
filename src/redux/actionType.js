@@ -14,3 +14,6 @@ export const ADD_LIST = 'ADD_LIST'
 export const MODIFY_LIST = 'MODIFY_LIST'
 export const DELETE_LIST = 'DELETE_LIST'
 export const SEARCH_LIST = 'SEARCH_LIST'
+
+// 网络部分
+export const REQUEST_MESSAGE = 'REQUEST_MESSAGE'

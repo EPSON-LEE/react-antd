@@ -3,7 +3,7 @@ import PropTypes from 'prop-types';
 import { Button } from 'antd'
 import './index.css'
 
-const testRedux = ({modalState, testState,openModal, shutModal,changeStateA}) => {
+const testRedux = ({modalState, testState,openModal, shutModal,changeStateA, getList}) => {
   let input
   return (
     <div>
@@ -23,6 +23,14 @@ const testRedux = ({modalState, testState,openModal, shutModal,changeStateA}) =>
         }}
       >
       关闭
+      </Button>
+      <Button type="dashed"
+        onClick={e => {
+          e.preventDefault()
+          getList()
+        }}
+      >
+      发送请求
       </Button>
       { modalState.modalStatus ? <div style={{backgroundColor:'yellow', position: 'absolute',width:'100px', height: '100px', left:'50%', top:'50%', marginLeft: '-50px', marginTop:'-50px'}}>弹窗打开了<p>{testState.text }</p></div>:<div /> }
       <form onSubmit={e => {

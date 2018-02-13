@@ -1,6 +1,6 @@
 import { connect } from 'react-redux'
 import testRedux from './testRedux'
-import { openModal, shutModal, changeStateA} from '../../redux/actions'
+import { openModal, shutModal, changeStateA, getList} from '../../redux/actions'
 
 // 把状态（state）传到组件中
 const mapStateToProps = (state) => {
@@ -21,6 +21,9 @@ const mapDispatchToProps = (dispatch) => {
     },
     changeStateA: (text) =>{
       dispatch(changeStateA(text))
+    },
+    getList: () => {
+      dispatch(getList())
     }
   }
 }
