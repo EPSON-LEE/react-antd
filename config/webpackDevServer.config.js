@@ -87,9 +87,9 @@ module.exports = function(proxy, allowedHost) {
     public: allowedHost,
     // 通过webpack配置proxy代理
     proxy: {
-      '/gm/api/*': {
+      '/api': {
           target: 'http://localhost:3000',
-          secure: false
+          changeOrigin: true
       }
   },
     before(app) {

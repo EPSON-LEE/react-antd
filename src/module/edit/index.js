@@ -1,19 +1,33 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
-import {Editor, EditorState} from 'draft-js';
+import BraftEditor from 'braft-editor'
+import 'braft-editor/dist/braft.css'
 
-export default class MyEditor extends React.Component {
-  constructor(props) {
-    super(props);
-    this.state = {editorState: EditorState.createEmpty()};
-    this.onChange = (editorState) => this.setState({editorState});
+export default class Demo extends React.Component {
+  constructor() {
+    super()
+    this.state = {
+      content: null
+    }
   }
-  render() {
+  handleChange = (content) => {
+    console.log(content)
+  }
+
+  handleHTMLChange = (html) => {
+    console.log(html)
+  }
+  render () {
+    const editorProps = {
+      height: 500,
+      initialContent: this.state.content,
+      onChange: this.handleChange,
+      onHTMLChange: this.handleHTMLChange
+    }
     return (
-      <Editor
-        editorState={this.state.editorState}
-        onChange={this.onChange}
-      />
-    );
+      <div className="demo">
+        <BraftEditor {...editorProps}/>
+      </div>
+    )
   }
 }

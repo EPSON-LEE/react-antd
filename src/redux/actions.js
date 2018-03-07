@@ -1,4 +1,5 @@
 import store from './store'
+// import { createAction } from 'redux-actions'
 import axios from 'axios'
 import {
   OPEN_MODAL,
@@ -12,7 +13,8 @@ import {
   MODIFY_LIST,
   DELETE_LIST,
   SEARCH_LIST,
-  REQUEST_MESSAGE 
+  REQUEST_MESSAGE,
+  FETCH_MESSAGE
 } from './actionType'
 
 // const store=crea
@@ -76,9 +78,17 @@ export function getList() {
   return {
     type: REQUEST_MESSAGE,
     payload: {
-      data: axios.get(`http://localhost:3001/articles`)
+      data: axios({
+        method:'get',
+        url: 'https://cnodejs.org/api/v1/topics'
+    }).then(function(res){
+        return res.data;
+    })
     }
   }
 }
 
-// 成功
+// 
+// const fetchSuccess = createAction(FETCH_MESSAGE.fetchSuccess)
+
+// thunk
