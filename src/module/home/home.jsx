@@ -3,6 +3,10 @@ import ReactDOM from 'react-dom';
 import { Input } from 'antd';
 import './index.css'
 
+const list = [
+  1,2,3,4
+]
+
 export default class CalcultePrice extends React.Component {
 
   constructor(props){
@@ -42,6 +46,24 @@ export default class CalcultePrice extends React.Component {
     console.log(this.state.price * this.state.amount)
   }
 
+  handleClick = (item, e) => {
+    console.log(item, e.target)
+  }
+
+  // 循环中绑定事件的方法
+  renderlist = () => {
+    let listLocal = list || []
+    return listLocal.map((item) => {
+      return (
+        <h1
+        key={item}
+        onClick={ (e) => this.handleClick(item, e)}>
+          {item}
+      </h1>
+      )
+    })
+  }
+
   render() {
     return (
      <div className="card">
@@ -52,6 +74,7 @@ export default class CalcultePrice extends React.Component {
           <p><span>测试：</span><Input className="input" placeholder="请输入文字" onChange={this.transform} /></p>
           <p>总价:{ this.state.price * this.state.amount }</p>
         </div>
+        {this.renderlist()}
      </div>
     )
   }
