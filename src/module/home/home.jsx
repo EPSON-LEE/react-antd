@@ -33,7 +33,6 @@ export default class CalcultePrice extends React.Component {
   }
 
   getAmount = (e) => {
-    // 输入检测，判断是否为数字
     if(isNaN(e.target.value)) {
       alert('请输入正整数')
     }else{
